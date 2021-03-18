@@ -1,0 +1,13 @@
+.driver-standings {
+    list-style-type: none;
+
+    li {
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        &:nth-child(even) {
+            background: $color-bg;
+        }
+    }
+}
+
