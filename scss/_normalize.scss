@@ -33,12 +33,12 @@ Sensible defaults --------------------------------------------------------------
 
 ::-moz-selection {
   /* Moz text selection colours */
-  background: $color-brand;
+  background: $color-darkest;
   color: #fff;
 }
 
 ::selection {
   /* Text selection colours */
-  background: $color-brand;
+  background: $color-darkest;
   color: #fff;
 }

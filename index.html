@@ -3,19 +3,85 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>F1 Recap</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Squada+One&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
         <link rel="stylesheet" href="./css/styles.css">
+
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <header>
+            <h1>F1 Recap</h1>
 
-        <h1>Next race: <span id="upcoming"></span></h1>
+            <ul>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Drivers</a></li>
+                <li><a href="#">Constructors</a></li>
+            </ul>
+        </header>
 
-        <ul id="driverStandings" class="driver-standings"></ul>
+        <section class="section-spacer schedule-section">
+
+            <!-- Previous round -->
+
+            <div class="schedule-section__split">
+                <h2 class="outline-text">Previous <span>Round</span></h2>
+
+                <div class="track-card">
+                    <div class="track-card__img" id="currentCircuit">
+                        <!-- Dynamic previous circuit placed here with JS -->
+                    </div>
+                    <div class="track-card__results" id="currentResults">
+                        <!-- Dynamic results placed here with JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next round -->
+
+            <div class="schedule-section__split">
+                <h2 class="outline-text">Next <span>Round</span></h2>
+                <div class="track-card">
+                    <div class="track-card__img">
+                        <img src="./img/circuit__imola.png" alt="">
+                    </div>
+                    <div class="track-card__info">
+                        <h3 class="outline-text"><span>Round</span> 02</h3>
+                        <h3>Emilia Romagna Grand Prix</h3>
+                        <p class="text-sml text-highlight">April 16-18</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Driver standings -->
+
+        <section class="section-spacer">
+            <h2 class="outline-text">Driver <span>standings</span></h2>
+            <span><a href="/drivers">View all</a></span>
+            <div class="driver-grid" data-team="mercedes">
+                <div class="driver-card">
+                    <div class="driver-card__img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="driver-card__info">
+                        <span>44</span>
+                        <h3>Lewis Hamilton</h3>
+                        <h4>Mercedes</h4>
+                    </div>
+                    <div class="driver-card__position">
+                        <span>1</span>
+                        <h5>25 <span>pts</span></h5>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <script src="./js/scripts.js" async defer></script>
     </body>

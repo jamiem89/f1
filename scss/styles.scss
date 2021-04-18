@@ -3,8 +3,10 @@
 @import "mixins";
 
 // Default styles
-@import "normalize";
+// @import "normalize";
 
 // Styles
 @import "base";
-@import "driver-standings";
+@import "typography";
+@import "modules";
+@import "pages";

@@ -4,6 +4,9 @@ html {
 }
 
 *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
     box-sizing: inherit;
 }
 
@@ -14,55 +17,21 @@ body {
     position: relative;
     font-size: $font-size;
     font-family: $font-primary;
-    color: $color-darkest;
+    background-color:$color-darkest;
+    color:$color-lightest;
     min-height: 100vh;
 }
 
 //  Type resets
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
+// h1, h2, h3, h4, h5, h6 {
 
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: $gutter-mob;
-
-    @include breakpoint(medium) {
-        margin-bottom: $gutter;
-        font-size: 1.75rem;
-    }
-}
-
-p {
-    letter-spacing: -0.0125em;
-    margin-bottom: $gutter-mob;
-    font-weight: 300;
-    @include breakpoint(medium) {
-        font-size: 1.125rem;
-        margin-bottom: $gutter;
-    }
-}
-
-ul {
-    list-style-position: inside;
-    font-weight: 300;
-    li {
-        letter-spacing: -0.0125em;
-        line-height: 1.25em;
-        @include breakpoint(medium) {
-            font-size: 1.125rem;
-        }
-    }
-}
+// }
 
 a {
-    color: $color-darkest;
-    font-weight: 300;
-    transition: all .2 ease-in-out;
+    color: $color-lightest;
+}
 
-    &:hover {
-        color: $color-brand;
-    }
+img {
+    display: block;
 }

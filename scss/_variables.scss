@@ -1,32 +1,34 @@
 // Fonts
-$font-primary: 'Ubuntu', sans-serif;
+$font-primary: 'Squada One', sans-serif;
+$font-secondary: 'Raleway', serif;
+
+
 
 // Font sizing
 $font-size: 16px;
 
 // Colours
-$color-brand: #3DB5BD;
-$color-brand--tint: #1A8689;
-$color-brand--bg: #CEECEE;
-$color-darkest: #414149;
-$color-lightest: #ffffff;
-$color-border: #E6E6E6;
-$color-bg: #F0F0F1;
+$color-darkest:#111111;
+$color-lightest:#FFFFFF;
+$color-brand:#1BE883;
 
 // Team colors
 
-$color-mercedes: black;
-$color-ferrari: red;
-$color-alpine: blue;
-$color-haas: white;
-$color-mclaren: orange;
-$color-alfa: red;
-$color-rbr: blue;
-$color-aston: green;
-$color-alpha: blue;
-$color-willams: blue;
+$color-mercedes:#00d2be;
+$color-ferrari:#dc0000;
+$color-alpine:#0090ff;
+$color-haas:#ffffff;
+$color-mclaren:#FF9800;
+$color-alfa:#900000;
+$color-rbr:#0600ef;
+$color-aston:#006f62;
+$color-alpha:#2b4562;
+$color-willams:#005aff;
 
 //Spacing
 $gutter-mob: 15px;
 $gutter: 20px;
+
+$padding-mob: 20px;
+$padding: 30px;
 
