@@ -20,6 +20,9 @@ body {
     background-color:$color-darkest;
     color:$color-lightest;
     min-height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 //  Type resets
