@@ -43,7 +43,7 @@ function generateDriverList(data) {
 }
 
 // Send the request
-driverList('http://ergast.com/api/f1/2021/drivers.json');
+driverList('https://ergast.com/api/f1/2021/drivers.json');
 
 
 // PREPARE DRIVER DATA
@@ -126,5 +126,5 @@ function generateDriverData(data) {
 };
 
 selectOne.addEventListener('change', () => {
-    driverData(`http://ergast.com/api/f1/2021/drivers/${selectOne.value}/results.json`);
+    driverData(`https://ergast.com/api/f1/2021/drivers/${selectOne.value}/results.json`);
 });
