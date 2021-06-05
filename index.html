@@ -1,88 +1,242 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>F1 Recap</title>
+        <title>Head to Head</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- google fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Squada+One&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css">
-
     </head>
     <body>
-        <header>
-            <h1>F1 Recap</h1>
+        <div class="wrapper">
+            <div class="container">
 
-            <ul>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Drivers</a></li>
-                <li><a href="#">Constructors</a></li>
-            </ul>
-        </header>
+                <header class="site-header">
+                    <h1 class="site-logo">Head <span class="outline">to</span> head</h1>
+                </header>
 
-        <section class="section-spacer schedule-section">
-
-            <!-- Previous round -->
-
-            <div class="schedule-section__split">
-                <h2 class="outline-text">Previous <span>Round</span></h2>
-
-                <div class="track-card">
-                    <div class="track-card__img" id="currentCircuit">
-                        <!-- Dynamic previous circuit placed here with JS -->
+                <div class="filters">
+                    <div class="filters__drivers">
+                        <div class="custom-dropdown icon__arrow">
+                            <select name="driverOne" id="driver-select-one">
+                                <option value="" selected="selected" disabled>Driver one</option>
+                                <option value="giovanazzi">Giovanazzi</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                            </select>
+                        </div>
+                        <span class="outline">VS</span>
+                        <div class="custom-dropdown icon__arrow">
+                            <select name="driverTwo" id="driver-select-two">
+                                <option value="" selected="selected" disabled>Driver two</option>
+                                <option value="raikkonen">Raikkonen</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                                <option value="">Driver</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="track-card__results" id="currentResults">
-                        <!-- Dynamic results placed here with JS -->
+
+                    <div class="filters__constructors">
+                        <div class="custom-dropdown icon__arrow">
+                            <select name="constructors" id="constructors">
+                                <option value="" selected="selected" disabled>Team Mates</option>
+                                <option value="">Mercedes</option>
+                                <option value="">Red Bull</option>
+                                <option value="">Ferrari</option>
+                                <option value="">Alpha Tauri</option>
+                                <option value="">Haas</option>
+                                <option value="">Williams</option>
+                                <option value="">Alpine</option>
+                                <option value="">Renault</option>
+                                <option value="">Aston Martin</option>
+                                <option value="">Alfa Romeo</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Next round -->
-
-            <div class="schedule-section__split">
-                <h2 class="outline-text">Next <span>Round</span></h2>
-                <div class="track-card">
-                    <div class="track-card__img">
-                        <img src="./img/circuit__imola.png" alt="">
+                <div class="results-table">
+                    <div class="table-header">
+                        <div class="driver">
+                            <div class="driver-img">
+                                <img src="./img/drivers/norris.png" alt>
+                            </div>
+                            <div class="driver-info">
+                                <h2><span class="outline">#4</span><br>
+                                Norris</h2>
+                            </div>
+                        </div>
+                        <div class="driver">
+                            <div class="driver-img">
+                                <img src="./img/drivers/norris.png" alt>
+                            </div>
+                            <div class="driver-info">
+                                <h2><span class="outline">#4</span><br>
+                                Norris</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="track-card__info">
-                        <h3 class="outline-text"><span>Round</span> 02</h3>
-                        <h3>Emilia Romagna Grand Prix</h3>
-                        <p class="text-sml text-highlight">April 16-18</p>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Championship Position</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">3</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Current Points</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">56</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">24</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Qualifying Battle</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">4</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Fastest Lap Battle</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">3</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Total Race Places lost/gained</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell">
+                                <span class="h4">+3</span>
+                            </div>
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">+9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Average Finish</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">4.3</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__title">
+                            <p>Total Average Speed</p>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">132.22mph</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">126.12mph</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__block">
+                        <div class="table__overall">
+                            <p class="underline">Winner</p>
+                            <h3 class="h2">Norris</h3>
+                        </div>
+                        <div class="table__results">
+                            <div class="table__cell table__cell--win">
+                                <span class="h4">6</span>
+                            </div>
+                            <div class="table__cell">
+                                <span class="h4">1</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <footer class="site-footer">
+                    <a class="btn" href="#"><span class="icon__arrow icon__arrow--flip">Back to top</span></a>
+
+                    <div class="site-footer__info">
+                        <p class="color-brand">A site by <a class="color-white" href="#">Jamie Moore</a>. powered by <a class="color-white" href="https://ergast.com/">Ergast API</a></p>
+                    </div>
+
+                </footer>
+
             </div>
-        </section>
+        </div>
 
-        <!-- Driver standings -->
 
-        <section class="section-spacer">
-            <h2 class="outline-text">Driver <span>standings</span></h2>
-            <span><a href="/drivers">View all</a></span>
-            <div class="driver-grid" data-team="mercedes">
-                <div class="driver-card">
-                    <div class="driver-card__img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="driver-card__info">
-                        <span>44</span>
-                        <h3>Lewis Hamilton</h3>
-                        <h4>Mercedes</h4>
-                    </div>
-                    <div class="driver-card__position">
-                        <span>1</span>
-                        <h5>25 <span>pts</span></h5>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <script src="./js/scripts.js" async defer></script>
+        <!-- <script src="./script.js" async defer></script> -->
     </body>
 </html>

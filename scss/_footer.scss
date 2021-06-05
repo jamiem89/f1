@@ -1,0 +1,22 @@
+.site-footer {
+    .btn {
+        span {
+            display: inline-block;
+            padding-right: 30px;
+            @include breakpoint-up(medium) {
+                padding-right: 45px;
+            }
+            @include breakpoint-up(large) {
+                padding-right: 60px;
+            }
+        }
+    }
+}
+
+.site-footer__info {
+    margin: 20px 0;
+    text-align: center;
+    @include breakpoint-up(medium) {
+        margin: 40px 0;
+    }
+}

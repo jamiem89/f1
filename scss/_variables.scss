@@ -1,34 +1,12 @@
-// Fonts
-$font-primary: 'Squada One', sans-serif;
-$font-secondary: 'Raleway', serif;
-
-
-
-// Font sizing
-$font-size: 16px;
-
 // Colours
-$color-darkest:#111111;
-$color-lightest:#FFFFFF;
-$color-brand:#1BE883;
+$color-bg: #111111;
+$color-brand: #D1FC02;
+$color-white: #ffffff;
 
-// Team colors
+// Typefaces
 
-$color-mercedes:#00d2be;
-$color-ferrari:#dc0000;
-$color-alpine:#0090ff;
-$color-haas:#ffffff;
-$color-mclaren:#FF9800;
-$color-alfa:#900000;
-$color-rbr:#0600ef;
-$color-aston:#006f62;
-$color-alpha:#2b4562;
-$color-willams:#005aff;
+$font-primary: 'Squada One', serif;
+$font-secondary: 'Raleway', sans-serif;
 
-//Spacing
-$gutter-mob: 15px;
-$gutter: 20px;
-
-$padding-mob: 20px;
-$padding: 30px;
-
+// Utilities
+$border-radius: 6px;

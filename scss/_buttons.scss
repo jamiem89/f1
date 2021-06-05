@@ -1,0 +1,28 @@
+.btn {
+    display: block;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: $color-white;
+    border: 1px solid $color-brand;
+    border-radius: $border-radius;
+
+    @include breakpoint-up(medium) {
+        font-size: 1.875em;
+        margin-bottom: 40px;
+        padding: 25px 20px;
+    }
+
+    @include breakpoint-up(large) {
+        font-size: 2.625em;
+    }
+}
+
+.btn--arrow {
+    &:after {
+        content: '';
+    }
+}

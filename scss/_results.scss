@@ -1,0 +1,117 @@
+.results-table {
+    border: 1px solid $color-brand;
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.table-header {
+    display: flex;
+    border-bottom: 1px solid $color-brand;
+    margin-bottom: 10px;
+}
+
+.driver {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    flex-shrink:0;
+    flex-grow:0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    &:first-child {
+        border-right:1px solid $color-brand;
+    }
+
+    h2 {
+        padding: 25px 0;
+    }
+
+    @include breakpoint-up(medium) {
+        justify-content: space-between;
+        &:first-child {
+            text-align: right;
+            padding-right: 40px;
+            .driver-img {
+                order: 0
+            }
+        }
+
+        &:last-child {
+            padding-left: 40px;
+            text-align: left;
+            .driver-img {
+                order: 1
+            }
+        }
+    }
+}
+
+.driver-img {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    align-items: flex-end;
+    border-bottom: 1px solid $color-brand;
+
+    @include breakpoint-up(medium) {
+        flex-basis: 40%;
+        border-bottom: none;
+    }
+}
+
+.table__block {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $color-brand;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.table__title {
+    flex-basis: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-brand;
+}
+
+.table__results {
+    display: flex;
+    width: 100%;
+    .table__cell {
+        flex-basis: 50%;
+        padding: 15px 40px;
+        &:first-of-type {
+            text-align: right;
+            border-right: 1px solid $color-brand;
+            &.table__cell--win {
+                border-right: 0;
+            }
+        }
+        span {
+            display: block;
+            width: 100%;
+        }
+    }
+    .table__cell--win {
+        background-color:
+        $color-brand;
+        span {
+            color: $color-bg;
+        }
+    }
+}
+
+.table__overall {
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px 20px;
+    @include breakpoint-up(medium) {
+        padding: 35px 20px 40px;
+    }
+    border-bottom: 1px solid $color-brand;
+}

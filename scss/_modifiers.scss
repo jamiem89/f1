@@ -1,0 +1,93 @@
+.outline {
+    color: $color-bg;
+    text-shadow: -1px -1px 0 $color-brand, 1px -1px 0 $color-brand, -1px 1px 0 $color-brand, 1px 1px 0 $color-brand;
+}
+
+.color-brand {
+    color: $color-brand;
+}
+
+.color-white {
+    color: $color-white;
+}
+
+.underline {
+    position: relative;
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    @include breakpoint-up(medium) {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    &:after {
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 20px);
+        width: 40px;
+        height: 1px;
+        background-color: $color-brand;
+        // margin-bottom: 20px;
+    }
+}
+
+.icon__arrow {
+    position: relative;
+    &:after,
+    &:before {
+        content:'';
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 8px);
+        display: block;
+        width: 8px;
+        height: 8px;
+        transform: rotate(45deg);
+        border-right: 1px solid $color-brand;
+        border-bottom: 1px solid $color-brand;
+
+        @include breakpoint-up(medium) {
+            right: 10px;
+            top: calc(50% - 10px);
+            width: 10px;
+            height: 10px;
+        }
+
+        @include breakpoint-up(large) {
+            top: calc(50% - 13px);
+            right: 25px;
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &:before {
+        top: calc(50% - 4px);
+        @include breakpoint-up(medium) {
+            top: calc(50% - 5px);
+        }
+        @include breakpoint-up(large) {
+            top: calc(50% - 7px);
+        }
+    }
+}
+
+.icon__arrow--flip {
+    &:after,
+    &:before {
+        transform: rotate(-135deg);
+    }
+
+    &:after {
+        top: 50%;
+        @include breakpoint-up(medium) {
+            top: 50%;
+        }
+
+        @include breakpoint-up(large) {
+            top: 50%;
+        }
+    }
+}

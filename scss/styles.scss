@@ -2,12 +2,14 @@
 @import "variables";
 @import "mixins";
 
-// Default styles
-// @import "normalize";
-
 // Styles
-@import "base";
-@import "typography";
-@import "modules";
-@import "header";
-@import "pages";
+@import "defaults";
+@import "buttons";
+@import "site-header";
+@import "filters";
+@import "results";
+@import "footer";
+
+
+// Utilities
+@import "modifiers";

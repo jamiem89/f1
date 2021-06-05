@@ -1,0 +1,100 @@
+.custom-dropdown {
+    position: relative;
+    select {
+        font-family: $font-primary;
+        color: $color-white;
+        font-size: 1.25em;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+        background-color: $color-bg;
+        height: 50px;
+        width: 100%;
+        padding: 0 5px;
+        text-align: center;
+        -webkit-appearance: none;
+        appearance: none;
+        @include breakpoint-up(medium) {
+            padding: 0 20px;
+            font-size: 1.875em;
+            height: 70px
+        }
+        @include breakpoint-up(large) {
+            height: 90px;
+            font-size: 2.625em;
+            padding: 0 40px;
+        }
+    }
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid $color-brand;
+    border-radius: $border-radius;
+    margin-bottom: 20px;
+    overflow: hidden;
+    @include breakpoint-up(medium) {
+        flex-wrap: no-wrap;
+    }
+}
+
+.filters__drivers {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    border-bottom: 1px solid $color-brand;
+
+    @include breakpoint-up(medium) {
+        flex-basis: 66.666666%;
+        border-right: 1px solid $color-brand;
+    }
+
+
+    span {
+        display: none;
+        @include breakpoint-up(medium) {
+            display: inline-block;
+            font-size: 1.85em;
+        }
+        @include breakpoint-up(large) {
+            font-size: 2.375em;
+        }
+    }
+
+    .custom-dropdown {
+        flex-basis: calc(50%);
+
+        &:first-child {
+            border-right: 1px solid $color-brand;
+        }
+
+        @include breakpoint-up(medium) {
+            flex-basis: calc(50% - 15px);
+
+            &:first-child {
+                border-right: 0;
+                margin-right: 15px;
+            }
+            &:last-child {
+                margin-left: 15px;
+            }
+        }
+
+        @include breakpoint-up(large) {
+            flex-basis: calc(50% - 25px);
+
+            &:first-child {
+                margin-right: 25px;
+            }
+            &:last-child {
+                margin-left: 25px;
+            }
+        }
+    }
+}
+.filters__constructors {
+    flex-basis: 100%;
+    @include breakpoint-up(medium) {
+        flex-basis: 33.333333%;
+    }
+}
