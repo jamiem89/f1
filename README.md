@@ -1,4 +1,5 @@
-# NextRace
+# Head to Head
 
-A little tool using an F1 based API to display next race and current driver/constructor standings.
+A tool to compare drivers in the current F1 season.
 
+Powered by [eragst API](https://ergast.com/).
