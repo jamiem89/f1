@@ -57,6 +57,7 @@
 
     @include breakpoint-up(medium) {
         flex-basis: 40%;
+        height: 100%;
         border-bottom: none;
     }
 }

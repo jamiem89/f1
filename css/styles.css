@@ -262,8 +262,6 @@ p {
 
 @media (min-width: 40em) {
   .filters__drivers {
-    -ms-flex-preferred-size: 66.666666%;
-        flex-basis: 66.666666%;
     border-right: 1px solid #D1FC02;
   }
 }
@@ -421,6 +419,7 @@ p {
   .driver-img {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
+    height: 100%;
     border-bottom: none;
   }
 }

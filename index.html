@@ -25,58 +25,18 @@
                     <div class="filters__drivers">
                         <div class="custom-dropdown icon__arrow">
                             <select name="driverOne" id="driver-select-one">
-                                <option value="" selected="selected" disabled>Driver one</option>
-                                <option value="giovanazzi">Giovanazzi</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
+                                <option value="" selected="selected">Driver one</option>
                             </select>
                         </div>
                         <span class="outline">VS</span>
                         <div class="custom-dropdown icon__arrow">
                             <select name="driverTwo" id="driver-select-two">
-                                <option value="" selected="selected" disabled>Driver two</option>
-                                <option value="raikkonen">Raikkonen</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
-                                <option value="">Driver</option>
+                                <option value="" selected="selected">Driver two</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="filters__constructors">
+                    <!-- <div class="filters__constructors">
                         <div class="custom-dropdown icon__arrow">
                             <select name="constructors" id="constructors">
                                 <option value="" selected="selected" disabled>Team Mates</option>
@@ -92,7 +52,7 @@
                                 <option value="">Alfa Romeo</option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="results-table">
@@ -102,8 +62,7 @@
                                 <img src="./img/drivers/norris.png" alt>
                             </div>
                             <div class="driver-info">
-                                <h2><span class="outline">#4</span><br>
-                                Norris</h2>
+                                <h2><span class="outline" id="driverNumber1">#4</span><br><span id="driverName1">Norris</span></h2>
                             </div>
                         </div>
                         <div class="driver">
@@ -111,8 +70,7 @@
                                 <img src="./img/drivers/norris.png" alt>
                             </div>
                             <div class="driver-info">
-                                <h2><span class="outline">#4</span><br>
-                                Norris</h2>
+                                <h2><span class="outline" id="driverNumber2">#4</span><br><span id="driverName2">Norris</span></h2>
                             </div>
                         </div>
                     </div>
@@ -122,10 +80,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">3</span>
+                                <span class="h4" id="currentPos1">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">8</span>
+                                <span class="h4" id="currentPos2">0</span>
                             </div>
                         </div>
                     </div>
@@ -135,10 +93,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">56</span>
+                                <span class="h4" id="currentPoints1">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">24</span>
+                                <span class="h4" id="currentPoints2">0</span>
                             </div>
                         </div>
                     </div>
@@ -148,10 +106,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">4</span>
+                                <span class="h4" id="qualiBattle1">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">0</span>
+                                <span class="h4" id="qualiBattle2">0</span>
                             </div>
                         </div>
                     </div>
@@ -161,10 +119,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">3</span>
+                                <span class="h4" id="fastestLapBattle1">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">1</span>
+                                <span class="h4" id="fastestLapBattle2">0</span>
                             </div>
                         </div>
                     </div>
@@ -174,10 +132,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell">
-                                <span class="h4">+3</span>
+                                <span class="h4" id="placesGained1">0</span>
                             </div>
                             <div class="table__cell table__cell--win">
-                                <span class="h4">+9</span>
+                                <span class="h4" id="placesGained2">0</span>
                             </div>
                         </div>
                     </div>
@@ -187,10 +145,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">4.3</span>
+                                <span class="h4" id="avgFinish1">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">7.8</span>
+                                <span class="h4" id="avgFinish2">0</span>
                             </div>
                         </div>
                     </div>
@@ -200,10 +158,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">132.22mph</span>
+                                <span class="h4" id="avgSpeed1">0mph</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">126.12mph</span>
+                                <span class="h4" id="avgSpeed2">0mph</span>
                             </div>
                         </div>
                     </div>
@@ -214,10 +172,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell table__cell--win">
-                                <span class="h4">6</span>
+                                <span class="h4">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4">1</span>
+                                <span class="h4">0</span>
                             </div>
                         </div>
                     </div>
@@ -227,7 +185,7 @@
                     <a class="btn" href="#"><span class="icon__arrow icon__arrow--flip">Back to top</span></a>
 
                     <div class="site-footer__info">
-                        <p class="color-brand">A site by <a class="color-white" href="#">Jamie Moore</a>. powered by <a class="color-white" href="https://ergast.com/">Ergast API</a></p>
+                        <p class="color-brand">A site by <a class="color-white" href="#">Jamie Moore</a>. powered by <a class="color-white" href="https://ergast.com/">Ergast API.</a></p>
                     </div>
 
                 </footer>
@@ -237,6 +195,6 @@
 
 
 
-        <!-- <script src="./script.js" async defer></script> -->
+        <script src="./script.js" async defer></script>
     </body>
 </html>
