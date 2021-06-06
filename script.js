@@ -199,10 +199,19 @@ function driverCompare() {
     };
     driverOne.avgFinish = (driverOne.avgFinish / driverOne.finishes.length);
     driverTwo.avgFinish = (driverTwo.avgFinish / driverTwo.finishes.length);
-    driverAvgFinish[0].textContent = averageFinish = Math.round(driverOne.avgFinish * 10) / 10;
-    driverAvgFinish[1].textContent = averageFinish = Math.round(driverTwo.avgFinish * 10) / 10;
-
-
+    driverAvgFinish[0].textContent = Math.round(driverOne.avgFinish * 10) / 10;
+    driverAvgFinish[1].textContent = Math.round(driverTwo.avgFinish * 10) / 10;
+    // Avg Speed
+    driverOne.avgSpeed = 0;
+    driverTwo.avgSpeed = 0;
+    for(let i = 0; i < driverOne.finishes.length; i++) {
+        driverOne.avgSpeed = (driverOne.avgSpeed + driverOne.averageSpeed[i]);
+        driverTwo.avgSpeed = (driverTwo.avgSpeed + driverTwo.averageSpeed[i]);
+    };
+    driverOne.avgSpeed = (driverOne.avgSpeed / driverOne.finishes.length) / 1.609;
+    driverTwo.avgSpeed = (driverTwo.avgSpeed / driverTwo.finishes.length) / 1.609;
+    driverAvgSpeed[0].textContent = `${Math.round(driverOne.avgSpeed * 100) / 100}mph`;
+    driverAvgSpeed[1].textContent = `${Math.round(driverTwo.avgSpeed * 100) / 100}mph`;
 }
 
 selectOne.addEventListener('change', () => {
@@ -212,5 +221,3 @@ selectOne.addEventListener('change', () => {
 selectTwo.addEventListener('change', () => {
     fetchDriverData(1, selectTwo.value);
 });
-
-// table__cell--win
