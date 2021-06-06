@@ -72,7 +72,7 @@ function fetchDriverData(num, driver) {
         combineData();
     });
 
-    let objectB = fetchData(`http://ergast.com/api/f1/2021/drivers/${driver}/driverstandings.json`).then(data => {
+    let objectB = fetchData(`https://ergast.com/api/f1/2021/drivers/${driver}/driverstandings.json`).then(data => {
         objectB = championshipData(data);
     }).then(() => {
         return objectB;
