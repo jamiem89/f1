@@ -1,15 +1,25 @@
-const roundButton = document.querySelector('#rounds');
+// Select elements for functionality
 const selectOne = document.querySelector('#driver-select-one');
 const selectTwo = document.querySelector('#driver-select-two');
 
-let currentPos1 = document.querySelector('#currentPos1');
-let currentPoints1 = document.querySelector('#currentPoints1');
-let qualiBattle1 = document.querySelector('#qualiBattle1');
-let fasestLapBattle1 = document.querySelector('#fastestLapBattle1');
-let placesGained1 = document.querySelector('#placesGained1');
-let avgFinish1 = document.querySelector('#avgFinish1');
-let avgSpeed1 = document.querySelector('#avgSpeed1');
+// Select elements for filling in information
+const driverName = document.querySelectorAll('[data-type="driverName"]');
+const driverImg = document.querySelectorAll('[data-type="driverImg"]');
+const driverNumber = document.querySelectorAll('[data-type="driverNumber"]');
+const driverCurrentPos = document.querySelectorAll('[data-type="currentPos"]');
+const driverCurrentPnts = document.querySelectorAll('[data-type="currentPnts"]');
+const driverQuali = document.querySelectorAll('[data-type="quali"]');
+const driverFastestLap = document.querySelectorAll('[data-type="fastestLap"]');
+const driverGained = document.querySelectorAll('[data-type="gained"]');
+const driverAvgFinish = document.querySelectorAll('[data-type="avgFinish"]');
+const driverAvgSpeed = document.querySelectorAll('[data-type="avgSpeed"]');
+const driverWinner = document.querySelector('[data-type="winner"]');
+const driverBattlePoints = document.querySelectorAll('[data-type="battlePoints"]');
 
+// Empty drivers object
+let driversObject = {
+    drivers: []
+ };
 
 // Reusable fetch data function
 function fetchData(url) {
@@ -45,86 +55,162 @@ function generateDriverList(data) {
 // Send the request
 driverList('https://ergast.com/api/f1/2021/drivers.json');
 
+// DRIVER DATA
 
-// PREPARE DRIVER DATA
-// Populate driver one
-function driverData(data) {
-    fetchData(data).then(data => generateDriverData(data));
+// Reusable driver data function
+function fetchDriverData(num, driver) {
+
+    let requestA = false;
+    let requestB = false;
+
+    let objectA = fetchData(`https://ergast.com/api/f1/2021/drivers/${driver}/results.json`).then(data => {
+        objectA = roundData(data);
+    }).then(() => {
+       return objectA;
+    }).then(() => {
+        requestA = true;
+        combineData();
+    });
+
+    let objectB = fetchData(`http://ergast.com/api/f1/2021/drivers/${driver}/driverstandings.json`).then(data => {
+        objectB = championshipData(data);
+    }).then(() => {
+        return objectB;
+    }).then(() => {
+        requestB = true;
+        combineData();
+    });
+
+    function combineData() {
+        if(requestA && requestB) {
+            driversObject.drivers[num] = {...objectA, ...objectB};
+        }
+        if(driversObject.drivers.length == 2) {
+            driverCompare();
+        }
+    }
 }
 
-function generateDriverData(data) {
-    // Get overall standings data
-    let roundData = data.MRData.RaceTable.Races;
-    let driverID = data.MRData.RaceTable.driverId;
-    let currentPos = 0;
-    let currentPoints = 0;
+function roundData(data) {
+    data = data.MRData.RaceTable.Races;
+    let qualiResults = [];
+    let fastestLaps = [];
+    let finishes = [];
+    let averageSpeed = [];
+    let object = [];
 
-    let driverOneData = {
-        raceNumber: 0,
-        familyName: '',
-        currentPos: 0,
-        currentPoints: 0,
-        qualiBattle: [],
-        fastestLapBattle: [],
-        placesGained: 0,
-        averageFinish: [],
-        averageSpeed: [],
-        battlePoints: 0
-    };
-
-    let averageSpeed = 0;
-    let averageFinish = 0;
-
-    for(let i = 0; i < roundData.length; i++) {
-        let round = roundData[i].Results[0];
-        let position = round.position;
-        let qualified = round.grid;
-        let fastestLapPos = 20;
-        if(round.FastestLap) {
-            let fastestLapPos = round.FastestLap.rank;
-        };
-        let avgSpeed = 0;
-        if(round.FastestLap) {
-            avgSpeed = round.FastestLap.AverageSpeed.speed;
+    // Loop through rounds
+    for(let i = 0; i < data.length; i++) {
+        qualiResults.push(parseInt(data[i].Results[0].grid));
+        if(data[i].Results[0].FastestLap) {
+            fastestLaps.push(parseInt(data[i].Results[0].FastestLap.rank));
+            averageSpeed.push(parseInt(data[i].Results[0].FastestLap.AverageSpeed.speed));
         } else {
-            avgSpeed = 0;
+            fastestLaps.push(20);
+            averageSpeed.push(0);
         }
-        // Add all the round info to the relevant object arrays
-        driverOneData.qualiBattle.push(qualified);
-        driverOneData.fastestLapBattle.push(fastestLapPos);
-        driverOneData.placesGained = driverOneData.placesGained + (qualified - position);
-        driverOneData.averageFinish.push(position);
-        driverOneData.averageSpeed.push(avgSpeed);
+        finishes.push(parseInt(data[i].Results[0].position));
     }
 
-    // Avg speed
-    for(let i = 0; i < driverOneData.averageSpeed.length; i++) {
-        averageSpeed = averageSpeed + parseInt(driverOneData.averageSpeed[i]);
-        console
-    };
-    averageSpeed = averageSpeed / driverOneData.averageSpeed.length;
-    // Convert to mph
-    averageSpeed = averageSpeed / 1.609;
-    averageSpeed = Math.round(averageSpeed * 100) / 100
+    object = {
+        'qualiResults': qualiResults,
+        'fastestLaps': fastestLaps,
+        'finishes': finishes,
+        'averageSpeed': averageSpeed,
+    }
 
-    // Avg finish
-    for(let i = 0; i < driverOneData.averageFinish.length; i++) {
-        averageFinish = averageFinish + parseInt(driverOneData.averageFinish[i]);
-    };
-    averageFinish = averageFinish / driverOneData.averageSpeed.length;
-    averageFinish = Math.round(averageFinish * 100) / 100
-
-    // Update table with current drivers stats
-    currentPos1.textContent = currentPos;
-    currentPoints1.textContent = currentPoints;
-    qualiBattle1.textContent = 0;
-    fasestLapBattle1.textContent = 0;
-    placesGained1.textContent = driverOneData.placesGained;
-    avgFinish1.textContent = averageFinish;
-    avgSpeed1.textContent = `${averageSpeed}mph`;
-
+    return object;
 };
 
+function championshipData(data) {
+    data = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];
+    let name = data.Driver.familyName;
+    let number = `#${data.Driver.permanentNumber}`;
+    let currentPos = data.position;
+    let currentPoints = data.points;
+    let object = {
+        'Name': name,
+        'Number': number,
+        'Position': currentPos,
+        'Points': currentPoints,
+    }
+    return object;
+};
+
+// COMPARE STATS IN THE DRIVERS OBJECT
+
+function driverCompare() {
+    let driverOne = driversObject.drivers[0];
+    let driverTwo = driversObject.drivers[1];
+    console.log(driverOne);
+    console.log(driverTwo);
+
+    // Driver name
+    driverName[0].textContent = driverOne.Name;
+    driverName[1].textContent = driverTwo.Name;
+    // Driver number
+    driverNumber[0].textContent = driverOne.Number;
+    driverNumber[1].textContent = driverTwo.Number;
+    // Driver Position
+    driverCurrentPos[0].textContent = driverOne.Position;
+    driverCurrentPos[1].textContent = driverTwo.Position;
+    // Driver Points
+    driverCurrentPnts[0].textContent = driverOne.Points;
+    driverCurrentPnts[1].textContent = driverTwo.Points;
+    // Quali Battle
+    driverOne.qualiBattle = 0;
+    driverTwo.qualiBattle = 0;
+    for(let i = 0; i < driverOne.qualiResults.length; i++) {
+        if(parseInt(driverOne.qualiResults[i]) < parseInt(driverTwo.qualiResults[i])) {
+            driverOne.qualiBattle++;
+        } else {
+            driverTwo.qualiBattle++;
+        }
+    }
+    driverQuali[0].textContent = driverOne.qualiBattle;
+    driverQuali[1].textContent = driverTwo.qualiBattle;
+    // Fastest Lap Battle
+    driverOne.fastestLapsBattle = 0;
+    driverTwo.fastestLapsBattle = 0;
+    for(let i = 0; i < driverOne.fastestLaps.length; i++) {
+        if(driverOne.fastestLaps[i] < driverTwo.fastestLaps[i]) {
+            driverOne.fastestLapsBattle++;
+        } else {
+            driverTwo.fastestLapsBattle++;
+        }
+    }
+    driverFastestLap[0].textContent = driverOne.fastestLapsBattle;
+    driverFastestLap[1].textContent = driverTwo.fastestLapsBattle;
+    // Places Gained/Lost
+    driverOne.gained = 0;
+    driverTwo.gained = 0;
+    for(let i = 0; i < driverOne.qualiResults.length; i++) {
+        driverOne.gained = driverOne.gained + (driverOne.qualiResults[i] - driverOne.finishes[i]);
+        driverTwo.gained = driverTwo.gained + (driverTwo.qualiResults[i] - driverTwo.finishes[i]);
+    }
+    driverGained[0].textContent = driverOne.gained;
+    driverGained[1].textContent = driverTwo.gained;
+    // Avg Finish
+    driverOne.avgFinish = 0;
+    driverTwo.avgFinish = 0;
+    for(let i = 0; i < driverOne.finishes.length; i++) {
+        driverOne.avgFinish = driverOne.avgFinish + driverOne.finishes[i];
+        driverTwo.avgFinish = driverTwo.avgFinish + driverTwo.finishes[i];
+    };
+    driverOne.avgFinish = (driverOne.avgFinish / driverOne.finishes.length);
+    driverTwo.avgFinish = (driverTwo.avgFinish / driverTwo.finishes.length);
+    driverAvgFinish[0].textContent = averageFinish = Math.round(driverOne.avgFinish * 10) / 10;
+    driverAvgFinish[1].textContent = averageFinish = Math.round(driverTwo.avgFinish * 10) / 10;
+
+
+}
+
 selectOne.addEventListener('change', () => {
-    driverData(`https://ergast.com/api/f1/2021/drivers/${selectOne.value}/results.json`);
+    fetchDriverData(0, selectOne.value);
 });
+
+selectTwo.addEventListener('change', () => {
+    fetchDriverData(1, selectTwo.value);
+});
+
+// table__cell--win

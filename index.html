@@ -25,13 +25,13 @@
                     <div class="filters__drivers">
                         <div class="custom-dropdown icon__arrow">
                             <select name="driverOne" id="driver-select-one">
-                                <option value="" selected="selected">Driver one</option>
+                                <option value="default" selected disabled>Driver one</option>
                             </select>
                         </div>
                         <span class="outline">VS</span>
                         <div class="custom-dropdown icon__arrow">
                             <select name="driverTwo" id="driver-select-two">
-                                <option value="" selected="selected">Driver two</option>
+                                <option value="default" selected disabled>Driver two</option>
                             </select>
                         </div>
                     </div>
@@ -59,18 +59,18 @@
                     <div class="table-header">
                         <div class="driver">
                             <div class="driver-img">
-                                <img src="./img/drivers/norris.png" alt>
+                                <!-- <img src="./img/drivers/norris.png" alt data-type="driverImg"> -->
                             </div>
                             <div class="driver-info">
-                                <h2><span class="outline" id="driverNumber1">#4</span><br><span id="driverName1">Norris</span></h2>
+                                <h2><span class="outline" data-type="driverNumber"></span><br><span data-type="driverName"></span></h2>
                             </div>
                         </div>
                         <div class="driver">
                             <div class="driver-img">
-                                <img src="./img/drivers/norris.png" alt>
+                                <!-- <img src="./img/drivers/norris.png" alt data-type="driverImg"> -->
                             </div>
                             <div class="driver-info">
-                                <h2><span class="outline" id="driverNumber2">#4</span><br><span id="driverName2">Norris</span></h2>
+                                <h2><span class="outline" data-type="driverNumber"></span><br><span data-type="driverName"></span></h2>
                             </div>
                         </div>
                     </div>
@@ -79,11 +79,11 @@
                             <p>Championship Position</p>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="currentPos1">0</span>
+                            <div class="table__cell">
+                                <span class="h4" data-type="currentPos">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4" id="currentPos2">0</span>
+                                <span class="h4" data-type="currentPos">0</span>
                             </div>
                         </div>
                     </div>
@@ -92,11 +92,11 @@
                             <p>Current Points</p>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="currentPoints1">0</span>
+                            <div class="table__cell">
+                                <span class="h4" data-type="currentPnts">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4" id="currentPoints2">0</span>
+                                <span class="h4" data-type="currentPnts">0</span>
                             </div>
                         </div>
                     </div>
@@ -105,11 +105,11 @@
                             <p>Qualifying Battle</p>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="qualiBattle1">0</span>
+                            <div class="table__cell">
+                                <span class="h4" data-type="quali">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4" id="qualiBattle2">0</span>
+                                <span class="h4" data-type="quali">0</span>
                             </div>
                         </div>
                     </div>
@@ -118,11 +118,11 @@
                             <p>Fastest Lap Battle</p>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="fastestLapBattle1">0</span>
+                            <div class="table__cell">
+                                <span class="h4" data-type="fastestLap">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4" id="fastestLapBattle2">0</span>
+                                <span class="h4" data-type="fastestLap">0</span>
                             </div>
                         </div>
                     </div>
@@ -132,10 +132,10 @@
                         </div>
                         <div class="table__results">
                             <div class="table__cell">
-                                <span class="h4" id="placesGained1">0</span>
+                                <span class="h4" data-type="gained">0</span>
                             </div>
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="placesGained2">0</span>
+                            <div class="table__cell">
+                                <span class="h4" data-type="gained">0</span>
                             </div>
                         </div>
                     </div>
@@ -144,48 +144,48 @@
                             <p>Average Finish</p>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="avgFinish1">0</span>
+                            <div class="table__cell">
+                                <span class="h4" data-type="avgFinish">0</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4" id="avgFinish2">0</span>
+                                <span class="h4" data-type="avgFinish">0</span>
                             </div>
                         </div>
                     </div>
-                    <div class="table__block">
+                    <!-- <div class="table__block">
                         <div class="table__title">
                             <p>Total Average Speed</p>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
-                                <span class="h4" id="avgSpeed1">0mph</span>
+                            <div class="table__cell">
+                                <span class="h4">0mph</span>
                             </div>
                             <div class="table__cell">
-                                <span class="h4" id="avgSpeed2">0mph</span>
+                                <span class="h4">0mph</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="table__block">
+                    </div> -->
+                    <!-- <div class="table__block">
                         <div class="table__overall">
                             <p class="underline">Winner</p>
-                            <h3 class="h2">Norris</h3>
+                            <h3 class="h2" data-type="winner">Norris</h3>
                         </div>
                         <div class="table__results">
-                            <div class="table__cell table__cell--win">
+                            <div class="table__cell" data-type="battlePoints">
                                 <span class="h4">0</span>
                             </div>
-                            <div class="table__cell">
+                            <div class="table__cell" data-type="battlePoints">
                                 <span class="h4">0</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <footer class="site-footer">
                     <a class="btn" href="#"><span class="icon__arrow icon__arrow--flip">Back to top</span></a>
 
                     <div class="site-footer__info">
-                        <p class="color-brand">A site by <a class="color-white" href="#">Jamie Moore</a>. powered by <a class="color-white" href="https://ergast.com/">Ergast API.</a></p>
+                        <p class="color-brand">A site by <a class="color-white" href="https://twitter.com/JamMooreDev">Jamie Moore</a>. powered by <a class="color-white" href="https://ergast.com/">Ergast API.</a></p>
                     </div>
 
                 </footer>
